@@ -35,16 +35,7 @@ public class DaoContactosImpl implements DaoContactos {
 		}
 	}
 	@Override
-	public void altaContacto(Contacto contacto) {
-		/*try(Connection con=DriverManager.getConnection(url,user,pwd);){
-			String sql="insert into contactos(nombre,email,edad) values(";
-			sql+="'"+contacto.getNombre()+"','"+contacto.getEmail()+"',"+contacto.getEdad()+")";
-			Statement st=con.createStatement();
-			st.execute(sql);
-		}
-		catch(SQLException ex) {
-			ex.printStackTrace();
-		}*/
+	public void altaContacto(Contacto contacto) {	
 		String sql="insert into contactos(nombre,email,edad) values(?,?,?)";
 		try(Connection con=ds.getConnection();
 				PreparedStatement prep=con.prepareStatement(sql);){	
