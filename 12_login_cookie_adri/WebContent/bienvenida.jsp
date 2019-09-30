@@ -8,11 +8,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%Persona persona=(Persona)session.getAttribute("persona");%>
-	<h1>Usuario: <%=persona.getUsuario()%></h1>
-	<h1>Email: <%=persona.getEmail()%></h1>
-	<h1>Edad: <%=persona.getEdad()%></h1><br/>
-	<h1>Preferencia: <%=request.getParameter("pref")%></h1><br/>
+<%-- 	<%Persona persona=(Persona)session.getAttribute("persona");%>	--%>
+
+	<h1>Usuario: ${sessionScope.persona.usuario}</h1>
+	<h1>Email: ${sessionScope.persona.email}</h1>
+	<h1>Edad:  ${sessionScope.persona.edad}</h1><br/>
+	<h1>Preferencia:  ${param.pref}</h1><br/>
 	<br/>
 	<a href="formulario.html">Volver</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<a href="Cierre">Cerrar sesión</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
