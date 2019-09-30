@@ -12,25 +12,15 @@ import daos.DaoContactos;
 import factories.FactoryDao;
 import model.Contacto;
 
-/**
- * Servlet implementation class Alta
- */
 @WebServlet(urlPatterns= {"/AltaAction"})
 public class AltaAction extends HttpServlet {
-	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		DaoContactos dao=FactoryDao.getDaoContactos();
 		Contacto contacto=new Contacto(0,
 				request.getParameter("nombre"),
 				request.getParameter("email"),
 				Integer.parseInt(request.getParameter("edad")));
-		dao.altaContacto(contacto);
-		
-	}
-
-	
+		dao.altaContacto(contacto);		
+	}	
 }
